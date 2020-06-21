@@ -1,0 +1,2 @@
+vagrant-boxes/.vagrant/*
+vagrant-boxes/*.log
