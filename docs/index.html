@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Container Networking</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background="#3381a0">
+				<h2>Container Networking</h2>
+			</section>
+			<section>
+				<h2>Setting Expectation</h2>
+				<img style="float: left;" src="https://media.giphy.com/media/9J8WAX9cklqFkoHujy/giphy.gif" width="250"
+					height="200">
+				<ul>
+					<li class="fragment" data-fragment-index="1">Container networking introduction</li>
+					<li class="fragment" data-fragment-index="2">Container network interfaces</li>
+					<li class="fragment" data-fragment-index="3">Network drivers</li>
+					<li class="fragment" data-fragment-index="4">Overlay and docker swarms</li>
+				</ul>
+			</section>
+			<section>
+				<h2>No Network Alert!!</h2>
+				<img src="https://media.giphy.com/media/S8wRmMQOTJyeerkw7q/giphy.gif">
+			</section>
+			<!-- <section>
+				<iframe width="889" height="500" src="https://www.youtube.com/embed/J9LK6EtxzgM" frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</section> -->
+			<section>
+				<h2>Container networking introduction</h2>
+			</section>
+			<section>
+				<h2>Evolution</h2>
+				<img src="https://media.giphy.com/media/Lqmp75yps0QtMyuhvr/giphy.gif">
+			</section>
+			<section>
+				<img src="images/Container-technology-evolution-part1.jpg">
+			</section>
+			<section>
+				<img src="images/Container-technology-evolution-part2.jpg">
+			</section>
+			<section>
+				<img src="images/Container-technology-evolution-part3.jpg">
+			</section>
+			<section>
+				<img src="images/Container-technology-evolution-part4.jpg" width="450" height="450">
+			</section>
+			<section>
+				<h2>network interfaces</h2>
+				<img src="https://media.giphy.com/media/3o7TKzhPqGvUDm3pba/giphy.gif" width="350" height="350">
+			</section>
+			<section>
+				<img src="images/separation_of_concerns.jpg" width="850" height="650">
+			</section>
+			<section>
+				<img src="images/cnm.png">
+			</section>
+			<section>
+				<img src="images/cni.png">
+			</section>
+			<section>
+				<span class="red">Why kubernetes move with CNI standards?</span>
+				<a style="font-size: medium;"
+					href="https://kubernetes.io/blog/2016/01/why-kubernetes-doesnt-use-libnetwork/">Confession</a>
+			</section>
+			<section>
+				<span class="red">Guess how then kubernetes supports docker?</span>
+				<img src="images/weave.jpg" width="350" height="350">
+			</section>
+			<section>
+				<h2>Network drivers</h2>
+				<img src="https://media.giphy.com/media/nOeD0X0WnwxIA/giphy.gif">
+			</section>
+			<section>
+				<h2>Host only</h2>
+				
+				<pre><code data-trim data-noescape>
+					$ docker run --rm -d --network host --name my_nginx nginx
+				</code></pre>
+			</section>
+			<section>
+				<h2>Bridge driver</h2>
+				<pre><code data-trim data-noescape>
+					$ docker run --rm -d --network bridge --name my_nginx nginx
+				</code></pre>
+			</section>
+			<section>
+				<h2>None driver</h2><pre><code data-trim data-noescape>
+					$ docker run --rm -d --network none --name my_nginx nginx
+				</code></pre>
+			</section>
+			<section>
+				<h2>Docker Swarm</h2>
+				<img src="https://media.giphy.com/media/LPBPrZOGx5lZzgo587/giphy.gif">
+			</section>
+			<section>
+				<img src="images/swarm.png">
+			</section>
+			<section>
+				
+			</section>
+			<section data-background="https://media.giphy.com/media/lD76yTC5zxZPG/giphy.gif"></section>
+		</div>
+	</div>
+
+	<script src="js/reveal.js"></script>
+
+	<script>
+		Reveal.initialize({
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true
+				}
+			]
+		});
+	</script>
+</body>
+
+</html>
