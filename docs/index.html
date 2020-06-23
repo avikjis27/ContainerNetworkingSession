@@ -49,6 +49,18 @@
 				<h2>Container networking introduction</h2>
 			</section>
 			<section>
+				<h2>Networking aspects</h2>
+				<ul>
+					<li>Need to talk to external world</li>
+					<li>Reach container from external world</li>
+					<li>Inter container connectivity within the same host</li>
+					<li>Inter container connectivity across hosts</li>
+					<li>Discover services</li>
+					<li>Loadbalance services</li>
+					<li>Secure multi-tenant services</li>
+				</ul>
+			</section>
+			<section>
 				<h2>Evolution</h2>
 				<img src="https://media.giphy.com/media/Lqmp75yps0QtMyuhvr/giphy.gif">
 			</section>
@@ -92,20 +104,21 @@
 			</section>
 			<section>
 				<h2>Host only</h2>
-				
+
 				<pre><code data-trim data-noescape>
-					$ docker run --rm -d --network host --name my_nginx nginx
+					$ docker run --rm  --net=host avikjis27/node-server
 				</code></pre>
 			</section>
 			<section>
 				<h2>Bridge driver</h2>
 				<pre><code data-trim data-noescape>
-					$ docker run --rm -d --network bridge --name my_nginx nginx
+					$ docker run --rm -p 8080:5000  avikjis27/node-server
 				</code></pre>
 			</section>
 			<section>
-				<h2>None driver</h2><pre><code data-trim data-noescape>
-					$ docker run --rm -d --network none --name my_nginx nginx
+				<h2>None driver</h2>
+				<pre><code data-trim data-noescape>
+					$ docker run --rm  --net=none avikjis27/node-server
 				</code></pre>
 			</section>
 			<section>
@@ -116,7 +129,7 @@
 				<img src="images/swarm.png">
 			</section>
 			<section>
-				
+
 			</section>
 			<section data-background="https://media.giphy.com/media/lD76yTC5zxZPG/giphy.gif"></section>
 		</div>
