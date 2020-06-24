@@ -1,2 +1,3 @@
 vagrant-boxes/.vagrant/*
 vagrant-boxes/*.log
+**/.DS_Store
