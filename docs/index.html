@@ -50,6 +50,11 @@
 				<h2>Container networking introduction</h2>
 			</section>
 			<section>
+				<h2>Network Namespace</h2>
+				<p>A namespace is a way of scoping a particular set of identifiers. Using a namespace, you can use the same identifier multiple times in different namespaces. You can also restrict an identifier set visible to particular processes.</p>
+				<a href="https://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/">Scott's Weblog</a>
+			</section>
+			<section>
 				<h2>Networking aspects</h2>
 				<ul>
 					<li>Need to talk to external world</li>
@@ -108,20 +113,22 @@
 				<img src="https://media.giphy.com/media/nOeD0X0WnwxIA/giphy.gif">
 			</section>
 			<section>
-				<h2>Host only</h2>
-
-				<pre><code data-trim data-noescape>
-					$ docker run --rm  --net=host avikjis27/node-server
-				</code></pre>
-			</section>
-			<section>
 				<h2>Bridge driver</h2>
+				<img src="images/bridge.png" width="400" height="250">
 				<pre><code data-trim data-noescape>
 					$ docker run --rm -p 8080:5000  avikjis27/node-server
 				</code></pre>
 			</section>
 			<section>
+				<h2>Host only</h2>
+				<img src="images/Host.png" width="250" height="250">
+				<pre><code data-trim data-noescape>
+					$ docker run --rm  --net=host avikjis27/node-server
+				</code></pre>
+			</section>
+			<section>
 				<h2>None driver</h2>
+				<img src="images/None.png" width="250" height="250">
 				<pre><code data-trim data-noescape>
 					$ docker run --rm  --net=none avikjis27/node-server
 				</code></pre>
