@@ -129,7 +129,18 @@
 				<img src="images/swarm.png">
 			</section>
 			<section>
-
+				<img src="images/overlay-1.jpg" width="600" height="550">
+				<pre><code data-trim data-noescape>
+					$ vagrant up
+				</code></pre>
+			</section>
+			<section>
+				<img src="images/overlay-2.jpg" width="600" height="500">
+				<pre><code data-trim data-noescape>
+					$ sudo docker service create --name node-server 
+					--replicas 3 --publish published=8080,target=5000 
+					avikjis27/node-server
+				</code></pre>
 			</section>
 			<section data-background="https://media.giphy.com/media/lD76yTC5zxZPG/giphy.gif"></section>
 		</div>

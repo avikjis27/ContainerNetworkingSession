@@ -34,6 +34,15 @@ docker run --rm --env PORT=6000 -p 8081:6000  avikjis27/node-server
 docker run --rm  --env PORT=6000 -p 8081:6000  --name server avikjis27/node-server
 docker run --rm --env PORT=6001  --net=container:server  avikjis27/node-server
 ```
+### Docker swarm
+```
+sudo docker node ls
+sudo docker service ls
+sudo docker service create --name node-server --replicas 3 --publish published=8080,target=5000 avikjis27/node-server
+sudo docker service scale node-server=4
+sudo tcpdump -i enp0s8 | grep VXLAN
+```
+
 
 ### Screen commands for mac only
 ```
